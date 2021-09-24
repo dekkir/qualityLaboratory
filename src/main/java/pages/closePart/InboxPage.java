@@ -16,7 +16,7 @@ public class InboxPage extends AbstractPage {
 
     private final SelenideElement sentLettersLink = $x("//a[contains(@title, 'Отправленные')]");
 
-    private final static String listOfLettersXpath = "//div[@class='llc__item llc__item_title']";
+    private final static String LIST_OF_LETTERS_XPATH = "//div[@class='llc__item llc__item_title']";
 
 
     @Override
@@ -43,6 +43,6 @@ public class InboxPage extends AbstractPage {
     }
 
     public String[] getListOfLetters() {
-        return $$x(listOfLettersXpath).stream().map(SelenideElement::getText).toArray(String[]::new);
+        return $$x(LIST_OF_LETTERS_XPATH).stream().map(SelenideElement::getText).toArray(String[]::new);
     }
 }
